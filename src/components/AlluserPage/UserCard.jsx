@@ -1,6 +1,7 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchSingleUser } from "../../reducers/users.reducer";
 const UserCard = ({ user }) => {
   const dispatch = useDispatch();
@@ -33,6 +34,11 @@ const UserCard = ({ user }) => {
       <Text mt={2} fontSize="sm" fontWeight="300" textTransform="lowercase">
         {user.email}
       </Text>
+      <Link key={user.id} to={`/user/${user.id}`}>
+        <Button mt={2} w="40%" ml="60%" variant="ghost" colorScheme="blue">
+          Show Details
+        </Button>
+      </Link>
     </Flex>
   );
 };

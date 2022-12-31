@@ -21,11 +21,7 @@ const AllUsers = () => {
         <>
           <SimpleGrid p="20px" columns={[1, 2, 3]} spacing={5}>
             {data.map((user) => {
-              return (
-                <Link key={user.id} to={`/user/${user.id}`}>
-                  <UserCard user={user} />
-                </Link>
-              );
+              return <UserCard user={user} />;
             })}
           </SimpleGrid>
         </>
